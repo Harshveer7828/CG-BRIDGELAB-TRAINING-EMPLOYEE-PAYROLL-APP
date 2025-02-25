@@ -2,6 +2,7 @@ package com.bridgelabz.employeepayrollapp.services;
 
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,11 +10,10 @@ import java.util.Optional;
 
 @Service
 public class EmployeServices {
-    private final EmployeeRepository employeeRepository;
 
-    public EmployeServices(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
 
     // Method to find the all employee
     public List<Employee> findAllEmploy(){
