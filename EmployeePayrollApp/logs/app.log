@@ -87,3 +87,8 @@
 2025-02-25 16:36:10 DEBUG [http-nio-8080-exec-8] c.b.e.controller.EmployeeController - Total employees found:- 2
 2025-02-25 16:36:19 INFO  [http-nio-8080-exec-9] c.b.e.controller.EmployeeController - Attempting to delete employee with ID:- 3
 2025-02-25 16:36:20 INFO  [http-nio-8080-exec-9] c.b.e.controller.EmployeeController - Employee with ID 3 deleted successfully
+2025-02-25 16:42:59 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25 16:42:59 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-25 16:42:59 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-25 16:42:59 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-25 16:42:59 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
