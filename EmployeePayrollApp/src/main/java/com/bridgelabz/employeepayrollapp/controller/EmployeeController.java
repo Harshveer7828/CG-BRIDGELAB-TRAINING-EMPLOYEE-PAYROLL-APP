@@ -5,6 +5,7 @@ import com.bridgelabz.employeepayrollapp.services.EmployeServices;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -58,9 +59,9 @@ public class EmployeeController {
 
     @PostMapping("/add")
     public Employee addEmployee(@Valid @RequestBody Employee employee) {
-        log.info("Adding new employee:- {}",employee);
+        log.info("Adding new employee:- {}", employee);
         Employee newEmployee = employeServices.addNewEmploye(employee);
-        log.debug("New employee created successfully:- {}",newEmployee);
+        log.debug("New employee created successfully:- {}", newEmployee);
         return newEmployee;
     }
 

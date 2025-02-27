@@ -16,6 +16,7 @@ public class  Employee {
     private String name;
 
     @DecimalMin(message = "Salary should be more than 500", value = "500")
+    @NotNull
     private Double salary;
 
     @NotNull(message = "Department cannot be null")
