@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Slf4j // using for logger
@@ -45,8 +46,8 @@ public class EmployeeController {
             return employee;
         } else {
             log.warn("Employee with {} not found", id);
+            throw new NoSuchElementException("For id " + id);
         }
-        return employee;
     }
 
     @GetMapping("/update/{id}")
