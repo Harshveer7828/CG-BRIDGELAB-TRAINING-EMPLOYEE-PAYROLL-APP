@@ -2,15 +2,16 @@ package com.bridgelabz.employeepayrollapp.controller;
 
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.services.EmployeServices;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
 @Slf4j // using for logger
-
+@Validated
 @RestController
 public class EmployeeController {
 
@@ -48,7 +49,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/update/{id}")
-    public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee updateEmployee) {
+    public Employee updateEmployee(@Valid @PathVariable Long id, @RequestBody Employee updateEmployee) {
         log.info("Updating employee with ID: {}", id);
         Employee employee = employeServices.updateEmployee(id, updateEmployee);
         log.debug("New employee successfully added with the ID:- {}", employee);
@@ -56,7 +57,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public Employee addEmployee(@RequestBody Employee employee) {
+    public Employee addEmployee(@Valid @RequestBody Employee employee) {
         log.info("Adding new employee:- {}",employee);
         Employee newEmployee = employeServices.addNewEmploye(employee);
         log.debug("New employee created successfully:- {}",newEmployee);

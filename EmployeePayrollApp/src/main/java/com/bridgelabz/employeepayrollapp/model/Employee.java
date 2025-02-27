@@ -1,7 +1,7 @@
 package com.bridgelabz.employeepayrollapp.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Entity
@@ -12,10 +12,13 @@ public class  Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee name Invalid, not match the regex")
     private String name;
 
+    @DecimalMin(message = "Salary should be more than 500", value = "500")
     private Double salary;
 
+    @NotNull(message = "Department cannot be null")
     private String department;
 
     public Employee() {
