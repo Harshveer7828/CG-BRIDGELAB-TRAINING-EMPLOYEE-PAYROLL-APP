@@ -45,8 +45,11 @@ public class EmployeeListController {
     // Get request to update the value of the employee
     @GetMapping("/update/{id}")
     public Employee updateEmployeeDetails(@PathVariable Long id,@RequestBody Employee updatedEmployee){
+
         return employeServiceAsList.updateEmployee(id,updatedEmployee);
     }
+
+
 
 
 
